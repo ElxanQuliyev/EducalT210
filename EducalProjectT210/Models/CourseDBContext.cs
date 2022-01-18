@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EducalProjectT210.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace EducalProjectT210.Models
 {
@@ -14,6 +15,9 @@ namespace EducalProjectT210.Models
 
         }
 
-        
+        public static implicit operator CourseDBContext(CourseController v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

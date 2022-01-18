@@ -8,11 +8,12 @@ namespace EducalProjectT210.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly CourseDBContext _context = new CourseDBContext();
+        private readonly CourseDBContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, CourseDBContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -21,13 +22,23 @@ namespace EducalProjectT210.Controllers
             {
                 Categories = _context.Categories.ToList(),
                 ClassRooms = _context.ClassRooms.ToList(),
+                Courses=_context.Course.ToList(),
+                Sliders=_context.Section1s.ToList(),
             };
-            return View(_context.Categories.ToList());
+            return View(vm);
         }
 
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult CourseDetail(int? id)
+        {
+            if(id== null) return NotFound();
+            var courseInfo = _context.Course.Find(id);
+            if (courseInfo == null) return NotFound();
+            return View(courseInfo);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

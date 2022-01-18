@@ -1,0 +1,36 @@
+﻿@model List<Category>
+<a class="btn btn-primary" href="/educaladmin/Category/Create">Create Category</a>
+<table class="table table-primary">
+    <thead>
+        <tr >
+            <th>id</th>
+            <th>Category Name</th>
+            <th>Description</th>
+            <th>Icon</th>
+              <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        @foreach (var item in Model)
+       {
+           <tr>
+             <td>1</td>
+            <td>@item.CategoryName</td> 
+            <td>@item.CategoryDescription</td>
+            <td>@item.CategoryIcon</td>
+            <td>
+                <a href="/educaladmin/Category/Edit/@item.CategoryId">Edit</a>
+                 <a href="/educaladmin/Category/Delete/@item.CategoryId">Delete</a>
+            </td>
+           </tr>
+           
+
+       }
+
+
+       
+        
+    </tbody>
+</table>
+

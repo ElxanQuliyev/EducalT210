@@ -1,0 +1,22 @@
+﻿@model Category
+<h1>Edit Page</h1>
+<div class="col-lg-7">
+<form method="post">
+    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+    <div>
+    <label>Category Name</label>
+    <input class="form-control"  type="text" name="CategoryName" value="@Model.CategoryName"/>
+    </div>
+        <div>
+    <label>Description</label>
+    <input class="form-control" type="text" name="CategoryDescription" value = "@Model.CategoryDescription"/>
+    </div>
+        <div>
+    <label>Category Name</label>
+    <input class="form-control" type="text" name="CategoryIcon" value = "@Model.CategoryIcon"/>
+    </div>
+ <br/>
+    <button class = "btn btn-outline-primary" type="submit">Create Category</button>
+</form>
+<a class="my-3 btn  btn-warning" href="/educaladmin/category">Back</a>
+</div>

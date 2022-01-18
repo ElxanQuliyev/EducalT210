@@ -6,5 +6,7 @@ namespace EducalProjectT210.ViewModels
     {
         public List<Category> Categories { get; set; }
         public List<ClassRoom> ClassRooms { get; set; }
+        public List<Course> Courses { get; set; }
+        public List <Section1> Sliders { get; set; }
     }
 }
