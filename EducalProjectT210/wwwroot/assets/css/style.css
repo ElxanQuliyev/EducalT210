@@ -2400,8 +2400,11 @@ p {
   width: 40px;
   height: 40px;
 }
+.category__item:hover i {
+    color: #fff;
+}
 .category__icon svg .st0 {
-  fill: #CEE1F2;
+    fill: #CEE1F2;
 }
 .category__icon svg .st1 {
   fill: #3444F1;

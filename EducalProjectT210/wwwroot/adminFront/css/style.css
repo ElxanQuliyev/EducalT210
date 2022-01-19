@@ -115,8 +115,27 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
-@-moz-keyframes flash {
-  0% {
+.iconList{
+    margin:20px 0;
+}
+.iconList i{
+    padding:15px;
+    border:2px solid #999;
+    margin:10px;
+    transition:.4s ease-in-out;
+    cursor:pointer;
+}
+.iconList i.icon-active{
+    background:green;
+    color:#fff;
+}
+    .iconList i:hover{
+        background:#212529;
+        color:#fff
+    }
+
+    @-moz-keyframes flash {
+        0% {
     opacity: 1;
   }
   25% {

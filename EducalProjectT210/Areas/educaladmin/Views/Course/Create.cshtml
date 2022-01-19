@@ -1,0 +1,46 @@
+﻿<h2>Course Page</h2>
+<form method="post">
+    <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" placeholder="name..." name="Name" />
+    </div>
+    <div class="mb-3">
+        <label>LessonCount</label>
+        <input class="form-control" placeholder="Lesson Count..." type="number" name="LessonCount" />
+    </div>
+    <div class="mb-3">
+        <label>Author</label>
+        <input class="form-control" placeholder="Author Name..." type="text" name="AuthorName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Rating</label>
+        <input class="form-control" placeholder="Rating..." type="text" name="Rating" />
+    </div>
+    <div class="mb-3">
+        <label>Price</label>
+        <input class="form-control" placeholder="Price..." type="text" name="Price" />
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea class="form-control" placeholder="Description..." type="text" name="Description"></textarea>
+    </div>
+    <div class="mb-3">
+        <label>Photo</label>
+        <input class="form-control" type="file" name="PhotoUrl" />
+    </div>
+    <div class="mb-3">
+        <label>Categories</label>
+        <select class="form-control" name="CategoryId">
+            @foreach (var item in ViewBag.CategoryList as List<Category>)
+            {
+            <option value="@item.CategoryId">@item.CategoryName</option>
+                
+            }
+        </select>
+    </div>
+     <div class="mb-3">
+        <input class="btn btn-primary" type="submit" value="Add Course" />
+    </div>
+
+</form>

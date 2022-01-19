@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/adminfront/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="/adminfront/images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 </head>
 
 <body>
@@ -490,6 +491,7 @@
   <script src="/adminfront/js/misc.js"></script>
   <script src="/adminfront/js/settings.js"></script>
   <script src="/adminfront/js/todolist.js"></script>
+  @await RenderSectionAsync("MyScripts",required:false)
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

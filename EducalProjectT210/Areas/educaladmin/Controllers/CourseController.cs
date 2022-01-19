@@ -14,8 +14,20 @@ namespace EducalProjectT210.Areas.educaladmin.Controllers
 
         public IActionResult Index()
         {
-            return View(_context.Categories.ToList());
+            return View(_context.Course.ToList());
        
+        }
+        public IActionResult Create()
+        {
+            ViewBag.CategoryList = _context.Categories.ToList();
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Create(Course course)
+        {
+            return View();
         }
 
     }

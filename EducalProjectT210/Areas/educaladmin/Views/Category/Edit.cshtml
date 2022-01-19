@@ -11,12 +11,38 @@
     <label>Description</label>
     <input class="form-control" type="text" name="CategoryDescription" value = "@Model.CategoryDescription"/>
     </div>
-        <div>
-    <label>Category Name</label>
-    <input class="form-control" type="text" name="CategoryIcon" value = "@Model.CategoryIcon"/>
-    </div>
+     <div>
+            <label>Icon</label>
+            <input id="iconInput" class="form-control" type="hidden" name="CategoryIcon" />
+            <div class="iconList">
+                <i class="fas fa-user"></i>
+                <i class="fab fa-adn"></i>
+                <i class="fas fa-allergies"></i>
+                <i class="fas fa-chair"></i>
+                <i class="fab fa-apper"></i>
+                <i class="fas fa-pencil-alt"></i>
+                <i class="fab fa-sketch"></i>
+                <i class="fas fa-tint"></i>
+                <i class="fas fa-biking"></i>
+                <i class="fas fa-blind"></i>
+                <i class="fas fa-box-open"></i>
+                <i class="far fa-calendar"></i>
+            </div>
+        </div>
  <br/>
     <button class = "btn btn-outline-primary" type="submit">Create Category</button>
 </form>
 <a class="my-3 btn  btn-warning" href="/educaladmin/category">Back</a>
 </div>
+
+@section MyScripts{
+<script>
+
+    $(".iconList i").on("click",function(){
+        $(".iconList i").removeClass("icon-active")
+        $(this).addClass("icon-active")
+        const value=$(this).attr("class")
+        $("#iconInput").val(value)
+    })
+</script>
+}
